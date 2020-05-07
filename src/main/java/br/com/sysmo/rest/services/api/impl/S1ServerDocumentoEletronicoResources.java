@@ -1,0 +1,15 @@
+package br.com.sysmo.rest.services.api.impl;
+
+public class S1ServerDocumentoEletronicoResources {
+
+    public static final String IDENTIFICACAO_DO_DOCUMENTO_ELETRONICO_NAO_INFORMADA = "IDENTIFICACAO_DO_DOCUMENTO_ELETRONICO_NAO_INFORMADA";
+    public static final String FALHA_AUTORIZAR_DOCUMENTO_ELETRONICO = "FALHA_AUTORIZAR_DOCUMENTO_ELETRONICO";
+    public static final String FALHA_AO_BUSCAR_DOCUMENTO_ELETRONICO = "FALHA_AO_BUSCAR_DOCUMENTO_ELETRONICO";
+    public static final String FALHA_NA_COMUNICACAO_COM_A_SEFAZ = "FALHA_NA_COMUNICACAO_COM_A_SEFAZ";
+    public static final String CAMPO_OBRIGATORIO_VAZIO = "CAMPO_OBRIGATORIO_VAZIO";
+    public static final String INSTABILIDADE_NA_COMUNICACAO_COM_A_SEFAZ = "INSTABILIDADE_NA_COMUNICACAO_COM_A_SEFAZ";
+    public static final String FALHA_AO_BUSCAR_DOCUMENTO_ELETRONICO_POR_ID = "FALHA_AO_BUSCAR_DOCUMENTO_ELETRONICO_POR_ID";
+
+    private S1ServerDocumentoEletronicoResources() {
+    }
+}
