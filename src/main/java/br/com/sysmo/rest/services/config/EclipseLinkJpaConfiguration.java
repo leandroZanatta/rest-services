@@ -10,11 +10,13 @@ import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.vendor.AbstractJpaVendorAdapter;
 import org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter;
 import org.springframework.transaction.jta.JtaTransactionManager;
 
 @Configuration
+@EnableJpaRepositories(basePackages = { "br.com.sysmo.rest.services.repository" })
 public class EclipseLinkJpaConfiguration extends JpaBaseConfiguration {
 
     protected EclipseLinkJpaConfiguration(DataSource dataSource, JpaProperties properties,
