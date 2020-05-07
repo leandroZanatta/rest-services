@@ -1,18 +1,16 @@
 package br.com.sysmo.rest.services.dto;
 
+import java.io.Serializable;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public class ValorStringDTO {
+@NoArgsConstructor
+@AllArgsConstructor
+public class ValorStringDTO implements Serializable {
 
     private String valor;
-
-    public ValorStringDTO(String valor) {
-        this.valor = valor;
-    }
-
-    public ValorStringDTO() {
-
-    }
 
 }

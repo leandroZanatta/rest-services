@@ -2,13 +2,15 @@ package br.com.sysmo.rest.services.repository;
 
 import java.util.Optional;
 
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
 import br.com.sysmo.rest.services.repository.domain.DocumentoEletronicoNumeroDOC;
 
-public interface DocumentoEletronicoNumeroDOCRepository {
+@Repository
+public interface DocumentoEletronicoNumeroDOCRepository extends CrudRepository<DocumentoEletronicoNumeroDOC, Long> {
 
-	public abstract Optional<DocumentoEletronicoNumeroDOC> findFirstByCodigoDocumentoEletronicoSerieAndAmbienteOrderByIdAsc(
-			Long codigoDocumentoEletronicoSerieDOC, String flagAmbiente);
-
-	public abstract Optional<DocumentoEletronicoNumeroDOC> findById(long l);
+    public abstract Optional<DocumentoEletronicoNumeroDOC> findFirstByCodigoDocumentoEletronicoSerieAndAmbienteOrderByIdAsc(
+            Long codigoDocumentoEletronicoSerieDOC, String flagAmbiente);
 
 }

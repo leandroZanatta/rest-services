@@ -1,6 +1,4 @@
 br\com\sysmo\rest\services\api\DocumentoEletronicoNumeroController.class
-br\com\sysmo\rest\services\PDVCadastroEntityManager.class
-br\com\sysmo\rest\services\DataSourceAutoConfigurer.class
 br\com\sysmo\rest\services\constant\S1ServerDocumentoEletronicoResources.class
 META-INF\spring.components
 br\com\sysmo\rest\services\repository\domain\DocumentoEletronicoNumeroDOC.class
@@ -12,9 +10,9 @@ br\com\sysmo\rest\services\api\impl\S1ServerDocumentoEletronicoConstant.class
 br\com\sysmo\rest\services\api\impl\InicializacaoModuloControllerImpl.class
 br\com\sysmo\rest\services\dto\ValorStringDTO.class
 br\com\sysmo\rest\services\api\impl\DocumentoEletronicoNumeroDOCServiceImpl.class
+br\com\sysmo\rest\services\config\JpaConfiguration.class
 br\com\sysmo\rest\services\RestServiceApplication.class
 br\com\sysmo\rest\services\anotations\PDVResponses.class
-br\com\sysmo\rest\services\repository\impl\DocumentoEletronicoNumeroDOCRepositoryImpl.class
 br\com\sysmo\rest\services\api\impl\DocumentoEletronicoNumeroControllerImpl.class
 br\com\sysmo\rest\services\api\impl\DocumentoEletronicoNumeroDOCService.class
 br\com\sysmo\rest\services\repository\DocumentoEletronicoNumeroDOCRepository.class

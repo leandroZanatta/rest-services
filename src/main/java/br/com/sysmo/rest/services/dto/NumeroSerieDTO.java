@@ -24,4 +24,5 @@ public class NumeroSerieDTO implements Serializable {
 
     @ApiModelProperty(notes = "Série do PDV")
     private Long serie;
+
 }
