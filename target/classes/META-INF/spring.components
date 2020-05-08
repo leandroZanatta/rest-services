@@ -1,0 +1,7 @@
+br.com.sysmo.rest.services.RestServiceApplication=org.springframework.stereotype.Component
+br.com.sysmo.rest.services.api.impl.DocumentoEletronicoNumeroControllerImpl=org.springframework.stereotype.Component
+br.com.sysmo.rest.services.api.impl.DocumentoEletronicoNumeroDOCServiceImpl=org.springframework.stereotype.Component
+br.com.sysmo.rest.services.api.impl.InicializacaoModuloControllerImpl=org.springframework.stereotype.Component
+br.com.sysmo.rest.services.dto.NumeroSerieDTO=javax.xml.bind.annotation.XmlRootElement
+br.com.sysmo.rest.services.repository.DocumentoEletronicoNumeroDOCRepository=org.springframework.stereotype.Component,org.springframework.data.repository.Repository
+br.com.sysmo.rest.services.repository.domain.DocumentoEletronicoNumeroDOC=javax.persistence.Entity,javax.persistence.Table,javax.persistence.SequenceGenerator
