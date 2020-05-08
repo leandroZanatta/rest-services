@@ -22,9 +22,22 @@
 		<!-- Web dependencies -->
 
 		<spring-framework.version>5.2.6.RELEASE</spring-framework.version>
+
+		<start-class>br.com.sysmo.rest.services.RestServiceApplication</start-class>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.experimental</groupId>
+			<artifactId>spring-graal-native</artifactId>
+			<version>0.6.0.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.reactivestreams</groupId>
+			<artifactId>reactive-streams</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-indexer</artifactId>
@@ -33,21 +46,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.hibernate</groupId>
-					<artifactId>hibernate-entitymanager</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.hibernate</groupId>
-					<artifactId>hibernate-core</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
+
 		<dependency>
-			<groupId>org.eclipse.persistence</groupId>
-			<artifactId>org.eclipse.persistence.jpa</artifactId>
-			<version>2.7.0</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-graalvm</artifactId>
+			<version>5.4.12.Final</version>
 		</dependency>
 
 		<dependency>
@@ -151,4 +155,57 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+
+	<profiles>
+		<profile>
+			<id>graal</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.graalvm.nativeimage</groupId>
+						<artifactId>native-image-maven-plugin</artifactId>
+						<version>20.0.0</version>
+						<configuration>
+							<buildArgs>
+								-J-Xmx5g
+								-Dspring.graal.verbose=true
+								-Dio.netty.noUnsafe=true
+								-Dspring.graal.remove-unused-autoconfig=true
+								--no-fallback
+								--allow-incomplete-classpath
+								-H:+ReportUnsupportedElementsAtRuntime
+								--report-unsupported-elements-at-runtime
+								-H:+ReportExceptionStackTraces
+								--no-server
+								--enable-all-security-services
+								--verbose
+								-Dspring.graal.skip-logback=true
+								-Ddebug=true
+								-H:Name=s1serverdocumentoeletronicodependencies
+								-H:IncludeResourceBundles=javax.servlet.http.LocalStrings
+								-H:IncludeResourceBundles=javax.servlet.LocalStrings
+								-H:EnableURLProtocols=http,jar
+								--initialize-at-build-time=org.postgresql.Driver,org.postgresql.util.SharedTimer,javax.persistence.EntityManagerFactory,org.eclipse.persistence.expressions.Expression,org.eclipse.persistence.jpa.JpaEntityManager,javax.persistence.criteria.CriteriaQuery,org.springframework.orm.jpa.EntityManagerFactoryInfo,org.springframework.data.repository.CrudRepository
+								--initialize-at-build-time=org.springframework.orm.jpa.EntityManagerFactoryInfo,org.springframework.data.repository.CrudRepository,org.eclipse.persistence.queries.DatabaseQuery,javax.persistence.criteria.CriteriaUpdate,javax.persistence.criteria.CriteriaDelete,javax.persistence.EntityGraph,javax.persistence.Query,org.eclipse.persistence.queries.AttributeGroup
+								--initialize-at-build-time=javax.persistence.EntityGraph,javax.persistence.Query,org.eclipse.persistence.queries.AttributeGroup,br.com.sysmo.rest.services.repository.DocumentoEletronicoNumeroDOCRepository,org.eclipse.persistence.core.queries.CoreAttributeGroup,org.eclipse.persistence.queries.Call,org.springframework.orm.jpa.EntityManagerProxy,org.eclipse.persistence.internal.sessions.factories.ObjectPersistenceRuntimeXMLProject_11_1_1$StoredProcedureArgumentInstantiationPolicy
+								--initialize-at-build-time=org.eclipse.persistence.internal.core.descriptors.CoreInstantiationPolicy,org.eclipse.persistence.internal.core.queries.CoreAttributeConverter$ConvertState,org.eclipse.persistence.internal.core.queries.CoreAttributeConverter,org.eclipse.persistence.internal.descriptors.InstantiationPolicy,org.eclipse.persistence.internal.sessions.factories.ObjectPersistenceRuntimeXMLProject_11_1_1$StoredProcedureArgumentType
+							</buildArgs>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>native-image</goal>
+								</goals>
+								<phase>package</phase>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

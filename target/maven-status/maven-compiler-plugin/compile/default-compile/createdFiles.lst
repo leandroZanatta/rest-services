@@ -10,7 +10,6 @@ br\com\sysmo\rest\services\api\impl\S1ServerDocumentoEletronicoConstant.class
 br\com\sysmo\rest\services\api\impl\InicializacaoModuloControllerImpl.class
 br\com\sysmo\rest\services\dto\ValorStringDTO.class
 br\com\sysmo\rest\services\api\impl\DocumentoEletronicoNumeroDOCServiceImpl.class
-br\com\sysmo\rest\services\config\JpaConfiguration.class
 br\com\sysmo\rest\services\RestServiceApplication.class
 br\com\sysmo\rest\services\anotations\PDVResponses.class
 br\com\sysmo\rest\services\api\impl\DocumentoEletronicoNumeroControllerImpl.class
