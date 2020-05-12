@@ -19,7 +19,7 @@ package br.com.sysmo.rest.services;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(proxyBeanMethods = false, scanBasePackages = { "br.com.sysmo.rest.services.api" })
+@SpringBootApplication(proxyBeanMethods = false, scanBasePackages = { "br.com.sysmo" })
 public class RestServiceApplication {
 
     public static void main(String[] args) throws Exception {
