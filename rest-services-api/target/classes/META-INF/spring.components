@@ -1,0 +1,6 @@
+br.com.sysmo.rest.services.RestServiceApplication=org.springframework.stereotype.Component
+br.com.sysmo.rest.services.api.config.ComponentScanAPIConfiguration=org.springframework.stereotype.Component
+br.com.sysmo.rest.services.api.config.DataSourceAutoConfigurer=org.springframework.stereotype.Component
+br.com.sysmo.rest.services.api.config.PDVCadastroEntityManager=org.springframework.stereotype.Component
+br.com.sysmo.rest.services.api.impl.DocumentoEletronicoNumeroControllerImpl=org.springframework.stereotype.Component
+br.com.sysmo.rest.services.api.impl.InicializacaoModuloControllerImpl=org.springframework.stereotype.Component
